@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.insurance.pages.RegisterController">
+   <children>
+      <Text layoutX="17.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Регистрация" wrappingWidth="243.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="outputId" layoutX="14.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Логин" />
+      <Text layoutX="14.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль" />
+      <PasswordField fx:id="PasW1" layoutX="14.0" layoutY="102.0" onKeyTyped="#passw1Scan" />
+      <PasswordField fx:id="PasW2" layoutX="14.0" layoutY="142.0" onKeyTyped="#passw2Scan" />
+      <Text layoutX="14.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Повторите Пароль" />
+      <Button fx:id="buttonActive" layoutX="437.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Подтвердить" />
+      <Text fx:id="passw1" layoutX="167.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="243.0" />
+      <Text fx:id="passw2" layoutX="167.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="243.0" />
+      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="193.0" text="Вернуться в основное меню" />
+      <Text fx:id="RegFinal" layoutX="14.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="409.13671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ListView fx:id="listBranches" layoutX="14.0" layoutY="183.0" onMouseClicked="#clickMouseBranch" prefHeight="94.0" prefWidth="149.0" />
+      <Text layoutX="14.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Выберите свой филиал:" />
+      <TextField fx:id="first_name1" layoutX="430.0" layoutY="31.0" />
+      <TextField fx:id="middle_name1" layoutX="430.0" layoutY="73.0" />
+      <TextField fx:id="last_name1" layoutX="430.0" layoutY="115.0" />
+      <Text layoutX="430.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Имя" />
+      <Text layoutX="430.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Фамилия" />
+      <Text layoutX="430.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Отчество" />
+      <TextField fx:id="sex1" layoutX="430.0" layoutY="171.0" />
+      <TextField fx:id="phone_number1" layoutX="430.0" layoutY="213.0" />
+      <TextField fx:id="appointment1" layoutX="430.0" layoutY="255.0" />
+      <Text layoutX="430.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пол" />
+      <Text layoutX="430.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Телефон" />
+      <Text layoutX="430.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Должность" />
+   </children>
+</AnchorPane>

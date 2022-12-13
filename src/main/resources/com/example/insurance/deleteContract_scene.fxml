@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.insurance.pages.DeleteContractController">
+    <children>
+        <TableView fx:id="contractTable" layoutX="16.0" layoutY="57.0" onMouseClicked="#clickMouseTable" prefHeight="287.0" prefWidth="574.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="ID2Column" prefWidth="93.0" text="ID Сотрудника" />
+                <TableColumn fx:id="ID3Column" minWidth="0.0" prefWidth="71.0" text="ID Клиента" />
+                <TableColumn fx:id="ID4Column" prefWidth="70.0" text="ID Тарифа" />
+            <TableColumn fx:id="dateColumn" prefWidth="87.0" text="Дата Начала" />
+                <TableColumn fx:id="timeColumn" prefWidth="88.0" text="Длительность" />
+            <TableColumn fx:id="interest_rateColumn" prefWidth="33.0" text="\%" />
+            <TableColumn fx:id="paymentColumn" prefWidth="81.0" text="Выплата" />
+            </columns>
+        </TableView>
+        <Button layoutX="385.0" layoutY="360.0" mnemonicParsing="false" onMouseClicked="#deleteContract" prefHeight="26.0" prefWidth="201.0" text="Удалить выбранный контракт" />
+        <Text layoutX="16.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Список всех контрактов" wrappingWidth="508.0">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Text>
+        <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="80.0" text="Вернуться " />
+        <Text fx:id="outputInfo" layoutX="103.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="272.0" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.insurance.pages.DeleteTariffController">
+    <children>
+        <TableView fx:id="tariffTable" layoutX="16.0" layoutY="57.0" onMouseClicked="#clickMouseTable" prefHeight="287.0" prefWidth="569.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="28.0" text="ID" />
+                <TableColumn fx:id="titleColumn" prefWidth="370.0" text="Название" />
+                <TableColumn fx:id="yearH_IRColumn" minWidth="0.0" prefWidth="61.0" text="yearH_IR" />
+                <TableColumn fx:id="year_IRColumn" prefWidth="56.0" text="year_IR" />
+                <TableColumn fx:id="year3_IRColumn" prefWidth="53.0" text="year3_IR" />
+            </columns>
+        </TableView>
+        <Button layoutX="399.0" layoutY="360.0" mnemonicParsing="false" onMouseClicked="#deleteTariff" prefHeight="26.0" prefWidth="187.0" text="Удалить выбранный тариф" />
+      <Text layoutX="16.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Список всех тарифов" wrappingWidth="508.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="80.0" text="Вернуться " />
+      <Text fx:id="outputInfo" layoutX="109.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="283.0" />
+    </children>
+</AnchorPane>

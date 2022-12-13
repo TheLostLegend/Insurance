@@ -1,0 +1,4 @@
+дек. 13, 2022 3:19:13 AM com.example.insurance.MAINDOOR main
+INFO: logger successfully configured.
+дек. 13, 2022 3:19:14 AM com.example.insurance.entities.ConnectorDB setConnection
+INFO: Приложение подключилось к БД
