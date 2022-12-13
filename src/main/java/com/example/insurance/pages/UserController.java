@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
 public class UserController extends FXbasic {
     Scene scene;
@@ -72,6 +73,7 @@ public class UserController extends FXbasic {
     @FXML
     @Override
     void back(ActionEvent event) {
+        Logger.getGlobal().info("Пользователь вышел в лес.");
         stage.setScene(this.scene);
         stage.show();
     }

@@ -8,6 +8,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class DeleteEmployee implements MenuItem {
     Stage stage;
@@ -36,5 +37,6 @@ public class DeleteEmployee implements MenuItem {
         stage.show();
         DeleteEmployeeController dTC = loader.getController();
         dTC.setdTC(this.scene, stage, employee_id);
+        Logger.getGlobal().info("Пользователь перешел в окно \"Удалить/отобразить сотрудника\"");
     }
 }

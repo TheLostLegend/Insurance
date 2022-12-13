@@ -86,6 +86,7 @@ public class DeleteTariffController extends FXbasic {
     @FXML
     @Override
     void back(ActionEvent event) {
+        Logger.getGlobal().info("Пользователь вернулся в основное меню");
         stage.setScene(this.scene);
         stage.show();
     }

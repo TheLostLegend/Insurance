@@ -1,4 +1,20 @@
-дек. 13, 2022 3:19:13 AM com.example.insurance.MAINDOOR main
+дек. 13, 2022 3:55:59 AM com.example.insurance.MAINDOOR main
 INFO: logger successfully configured.
-дек. 13, 2022 3:19:14 AM com.example.insurance.entities.ConnectorDB setConnection
+дек. 13, 2022 3:55:59 AM com.example.insurance.entities.ConnectorDB setConnection
 INFO: Приложение подключилось к БД
+дек. 13, 2022 3:56:05 AM com.example.insurance.entities.ConnectorDB getValueString
+INFO: Строка успешно получена из БД
+дек. 13, 2022 3:56:07 AM com.example.insurance.entities.ConnectorDB getValueInt
+INFO: Целое значение получено из БД.
+дек. 13, 2022 3:56:07 AM com.example.insurance.pages.AddNewTariff execute
+INFO: Пользователь перешел в окно "Добавить новый тариф"
+дек. 13, 2022 3:56:34 AM com.example.insurance.entities.ConnectorDB updateTable
+INFO: Таблица успешно обновлена
+дек. 13, 2022 3:56:34 AM com.example.insurance.pages.AddNewTariffController createTariff
+INFO: Тариф 2 успешно создан!
+дек. 13, 2022 3:56:34 AM com.example.insurance.entities.ConnectorDB getValueInt
+INFO: Целое значение получено из БД.
+дек. 13, 2022 3:56:50 AM com.example.insurance.entities.ConnectorDB closeConnection
+INFO: Соединение с БД успешно закрыто.
+дек. 13, 2022 3:56:50 AM com.example.insurance.pages.MainController exit
+INFO: The program successfully ended.

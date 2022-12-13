@@ -91,6 +91,9 @@ public class AddNewContractController extends FXbasic {
             if ((new Contract(id, employee_id, passport_id, Tariff_id, null, time, interest_rate, payment)).insertContract()){
                 outputInfo.setText("Контракт " + id + " успешно создан!");
                 Logger.getGlobal().info("Контракт " + id + " успешно создан!");
+                int contract_id = ConnectorDB.getValueInt(
+                        "SELECT MAX(contract_id) AS maxId FROM Insurance_contract","maxId") + 1;
+                outputId.setText("Данному контракту будет присвоен ID = " + contract_id);
             }
             else {
                 outputInfo.setText("Пожалуйсте верно заполните все поля");
@@ -104,6 +107,7 @@ public class AddNewContractController extends FXbasic {
     @FXML
     @Override
     void back(ActionEvent event) {
+        Logger.getGlobal().info("Пользователь вернулся в основное меню");
         stage.setScene(this.scene);
         stage.show();
     }

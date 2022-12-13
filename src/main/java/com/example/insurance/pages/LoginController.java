@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class LoginController extends  FXbasic{
     public void setLoginC(Scene scene, Stage stage) {
@@ -33,6 +34,7 @@ public class LoginController extends  FXbasic{
 
     @FXML @Override
     void back(ActionEvent event) {
+        Logger.getGlobal().info("Пользователь вышел в лес.");
         stage.setScene(this.scene);
         stage.show();
     }
@@ -41,6 +43,7 @@ public class LoginController extends  FXbasic{
     void loginMain(ActionEvent event) throws IOException {
         String realPassword = ConnectorDB.getValueString(String.format("SELECT * FROM Employee WHERE employee_id =" + logW.getText()), "password_emp");
         if (realPassword!=null && realPassword.equals(PasW1.getText())) {
+            Logger.getGlobal().info("Вход успешен, перенаправление. Пользователь " + logW.getText());
             RegFinal.setText("Вход успешен, перенаправление.");
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MAINDOOR.class.getResource("user_scene.fxml"));

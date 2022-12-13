@@ -48,6 +48,9 @@ public class AddNewBranchController extends FXbasic {
             if ((new Branch(id, branch_name, address, phone_number)).insertBranch()) {
                 outputInfo.setText("Филиал " + id + " успешно создан!");
                 Logger.getGlobal().info("Филиал " + id + " успешно создан!");
+                int branchID = ConnectorDB.getValueInt(
+                        "SELECT MAX(branch_id) AS maxId FROM Branch","maxId") + 1;
+                outputId.setText("Данному филиалу будет присвоен ID = " + branchID);
             }
             else {
                 outputInfo.setText("Пожалуйсте верно заполните все поля");
@@ -60,6 +63,7 @@ public class AddNewBranchController extends FXbasic {
     @FXML
     @Override
     void back(ActionEvent event) {
+        Logger.getGlobal().info("Пользователь вернулся в основное меню");
         stage.setScene(this.scene);
         stage.show();
     }

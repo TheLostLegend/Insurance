@@ -8,6 +8,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class DeleteBranch implements MenuItem {
     Stage stage;
@@ -34,5 +35,6 @@ public class DeleteBranch implements MenuItem {
         stage.show();
         DeleteBranchController dTC = loader.getController();
         dTC.setdTC(this.scene, stage);
+        Logger.getGlobal().info("Пользователь перешел в окно \"Удалить/отобразить филиал\"");
     }
 }

@@ -17,11 +17,12 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class RegisterController extends  FXbasic{
 
     public Button buttonActive;
-    public ListView listBranches;
+    public ListView<String> listBranches;
     public TextField first_name1;
     public TextField middle_name1;
     public TextField last_name1;
@@ -90,8 +91,13 @@ public class RegisterController extends  FXbasic{
             String phone_number = phone_number1.getText();
             String sex = sex1.getText();
             String appointment = appointment1.getText();
-            if (new Employee(empID, password1, first_name, middle_name, last_name, phone_number, sex, appointment, branch_id).insertEmployee())
+            if (new Employee(empID, password1, first_name, middle_name, last_name, phone_number, sex, appointment, branch_id).insertEmployee()){
                 RegFinal.setText("Регистрация успешна! Войдите в свой аккаунт через главное меню.");
+                Logger.getGlobal().info("Регистрация успешна! Пользователь " + empID);
+                int employeeID = ConnectorDB.getValueInt(
+                        "SELECT MAX(employee_id) AS maxId FROM Employee","maxId") + 1;
+                outputId.setText("В качестве логина вам будет присвоен ID = " + employeeID);
+            }
             else {RegFinal.setText("Пожалуйста заполните все поля");}
         }
         else {RegFinal.setText("Пожалуйста заполните все поля");}
@@ -100,12 +106,13 @@ public class RegisterController extends  FXbasic{
 
     @FXML @Override
     void back(ActionEvent event) {
+        Logger.getGlobal().info("Пользователь вышел в лес.");
         stage.setScene(this.scene);
         stage.show();
     }
 
     public void clickMouseBranch(MouseEvent mouseEvent) {
-        String action = (String) listBranches.getSelectionModel().getSelectedItem();
+        String action = listBranches.getSelectionModel().getSelectedItem();
         if(action != null)
             branch_id = Integer.parseInt(action);
     }

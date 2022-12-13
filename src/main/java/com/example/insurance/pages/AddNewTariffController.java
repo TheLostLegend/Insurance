@@ -50,6 +50,9 @@ public class AddNewTariffController extends FXbasic {
             if ((new Tariff(id, title, yearH_IR, year_IR, year3_IR)).insertTariff()){
                 outputInfo.setText("Тариф " + id + " успешно создан!");
                 Logger.getGlobal().info("Тариф " + id + " успешно создан!");
+                int tariffID = ConnectorDB.getValueInt(
+                        "SELECT MAX(Tariff_id) AS maxId FROM Tariff","maxId") + 1;
+                outputId.setText("Данному тарифу будет присвоен ID = " + tariffID);
             }
             else {
                 outputInfo.setText("Пожалуйсте верно заполните все поля");
@@ -62,6 +65,7 @@ public class AddNewTariffController extends FXbasic {
     @FXML
     @Override
     void back(ActionEvent event) {
+        Logger.getGlobal().info("Пользователь вернулся в основное меню");
         stage.setScene(this.scene);
         stage.show();
     }

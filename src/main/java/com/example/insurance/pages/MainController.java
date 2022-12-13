@@ -24,7 +24,7 @@ public class MainController {
     @FXML
     void exit(ActionEvent event) {
         ConnectorDB.closeConnection();
-        Logger.getGlobal().info("The program successfully ended.");
+        Logger.getGlobal().info("Программа завершила свою работу.");
         stage.close();
     }
 
@@ -36,6 +36,7 @@ public class MainController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        Logger.getGlobal().info("Пользователь вошел в меню регистрации");
         RegisterController intC = loader.getController();
         intC.setRegC(this.scene, stage);
     }
@@ -48,6 +49,7 @@ public class MainController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        Logger.getGlobal().info("Пользователь вошел в меню логина");
         LoginController intC = loader.getController();
         intC.setLoginC(this.scene, stage);
 
